@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Struktur Kelas</title>
+
+    <style>
+      body {
+        margin: 0;
+        font-family:
+          Segoe UI,
+          sans-serif;
+        background: radial-gradient(
+          circle at bottom right,
+          #5b2c6f,
+          #0f2027,
+          #000
+        );
+        color: white;
+        text-align: center;
+      }
+
+      /* Judul */
+      h1 {
+        margin-top: 40px;
+        animation: fadeDown 1s ease;
+      }
+
+      /* Container */
+      .tree {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+      }
+
+      /* List */
+      .tree ul {
+        padding-top: 20px;
+        position: relative;
+      }
+
+      .tree li {
+        display: inline-block;
+        text-align: center;
+        list-style-type: none;
+        position: relative;
+        padding: 20px 10px 0 10px;
+        animation: fadeUp 1s ease;
+      }
+
+      /* Garis */
+      .tree li::before,
+      .tree li::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 50%;
+        border-top: 2px solid #ccc;
+        width: 50%;
+        height: 20px;
+      }
+
+      .tree li::after {
+        right: auto;
+        left: 50%;
+        border-left: 2px solid #ccc;
+      }
+
+      .tree li:only-child::after,
+      .tree li:only-child::before {
+        display: none;
+      }
+
+      .tree li:only-child {
+        padding-top: 0;
+      }
+
+      .tree li:first-child::before,
+      .tree li:last-child::after {
+        border: none;
+      }
+
+      /* Box */
+      .box {
+        display: inline-block;
+        padding: 8px 20px;
+        border-radius: 20px;
+        background: white;
+        color: black;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+
+      /* Hover animasi */
+      .box:hover {
+        background: #00eaff;
+        color: black;
+        transform: scale(1.1);
+        box-shadow: 0 0 20px #00eaff;
+      }
+
+      /* Animasi */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeDown {
+        from {
+          opacity: 0;
+          transform: translateY(-40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Structure & Schedule</h1>
+
+    <div class="tree">
+      <ul>
+        <li>
+          <div class="box">Abdul Wahab S.Pdi</div>
+
+          <ul>
+            <li>
+              <div class="box">Putry</div>
+
+              <ul>
+                <li><div class="box">Pratiwi</div></li>
+                <li><div class="box">Paulista</div></li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="box">Jeriko</div>
+
+              <ul>
+                <li><div class="box">Lista</div></li>
+                <li><div class="box">Davina</div></li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="box">Kebersihan</div>
+
+              <ul>
+                <li><div class="box">Jeriko</div></li>
+                <li><div class="box">Raka</div></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
